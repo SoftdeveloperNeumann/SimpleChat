@@ -1,5 +1,7 @@
 package com.example.simplechat
 
+import android.app.NotificationManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
@@ -80,6 +82,8 @@ class ChatAktivity : AppCompatActivity() {
 
             }
         })
+        val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        manager.cancelAll()
     }
 
     private fun addMessage(message: String, typ: Int) {
